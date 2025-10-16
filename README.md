@@ -1,50 +1,98 @@
-# Welcome to your Expo app 👋
+# VetE-Commerce
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Logo VetE-Commerce](assets/icon.png)
 
-## Get started
+Aplicación desarrollada como parte del curso **Desarrollo de Aplicaciones** de Coderhouse. Este proyecto simula una tienda veterinaria digital, permitiendo a los usuarios explorar productos, iniciar sesión, gestionar su carrito y realizar pedidos. Está orientado a dispositivos móviles y fue construido con **Expo SDK 53**.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🧭 Alcances del proyecto
 
-2. Start the app
+Vet E-Commerce busca replicar una experiencia de compra sencilla y funcional para productos veterinarios. El foco está en:
 
-   ```bash
-   npx expo start
-   ```
+- Autenticación de usuarios
+- Persistencia de sesión local
+- Navegación fluida entre pantallas
+- Gestión de productos y pedidos
+- Integración con Firebase para datos en tiempo real
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ✨ Features incluidos
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Registro e inicio de sesión con Firebase Authentication
+- Persistencia de sesión con SQLite (y fallback con AsyncStorage)
+- Visualización de productos desde Firebase Realtime Database
+- Agregado y eliminación de productos en el carrito
+- Confirmación de pedidos
+- Navegación entre pantallas con React Navigation
+- Manejo global del estado con Redux Toolkit
+- Componentes reutilizables para inputs, botones y tarjetas
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🧰 Tecnologías y librerías utilizadas
+
+| Librería             | Uso principal                                                                 |
+|----------------------|--------------------------------------------------------------------------------|
+| **Expo SQLite**      | Persistencia local de sesión en dispositivos móviles                          |
+| **AsyncStorage**     | Fallback para persistencia en entornos no compatibles con SQLite (como web)   |
+| **Redux Toolkit**    | Manejo global del estado de la app y lógica de negocio                        |
+| **RTK Query**        | Consumo eficiente de datos desde Firebase                                     |
+| **Firebase**         | Autenticación de usuarios y base de datos en tiempo real                      |
+| **Expo CLI**         | Entorno de desarrollo y ejecución multiplataforma                             |
+
+---
+
+## ⚙️ Requisitos previos
+
+Antes de instalar y ejecutar la app, asegurate de tener:
+
+- [Node.js](https://nodejs.org/) (versión 20 o superior recomendada)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) instalado globalmente
+- [Git](https://git-scm.com/) para clonar el repositorio
+
+
+---
+
+## 🚀 Instalación y puesta a punto
+
+1. Cloná el repositorio:
 
 ```bash
-npm run reset-project
+git clone https://github.com/matof12/vet-ecommerce
+cd ecommerce-vet
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Instalá las dependencias:
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Configurá las variables de entorno para Firebase
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Creá un archivo `.env` en la raíz del proyecto con las variables
 
-## Join the community
+4. Iniciá la aplicación en modo desarrollo:
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. Abrí la app en un emulador Android/iOS o en tu celular con Expo Go
+
+---
+
+## 📦 Estructura del proyecto
+
+```
+/assets           → ícono
+/components       → componentes reutilizables
+/screens          → pantallas principales de la app
+/storage            → configuración de Redux Toolkit y slices
+/services         → lógica de Firebase y RTK Query
+/db         → lógica de SQLite y persistencia local
+```
+
+---
